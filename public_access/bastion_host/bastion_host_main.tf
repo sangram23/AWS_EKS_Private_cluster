@@ -36,6 +36,14 @@ tags = {
   }
 }
 
+resource "aws_security_group_rule" "add_bastion_squid_proxy" {
+  type              = "ingress"
+  from_port         = 3128
+  to_port           = 3128
+  protocol          = "tcp"
+  cidr_blocks       = ["172.43.0.0/16"]
+  security_group_id = aws_security_group.public_access_sg.id
+}
 
 # Creating 1st EC2 instance in Public Subnet
 resource "aws_instance" "demoinstance" {

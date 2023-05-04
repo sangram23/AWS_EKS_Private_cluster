@@ -1,4 +1,4 @@
-cluster_name = "mateusmullerme"
+cluster_name = "airflow"
 
 tags = {
   "Department"  = "SRE"

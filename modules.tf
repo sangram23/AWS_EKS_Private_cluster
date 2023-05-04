@@ -34,3 +34,11 @@ module "node_group" {
   ]
 }
 
+module "storage" {
+  source = "./modules/storage/"
+  vpc_id = module.network.vpc_id
+  cluster-name= var.cluster_name
+  subnet_ids_a = module.network.subnet_1a
+  subnet_ids_b = module.network.subnet_1b
+  
+}
